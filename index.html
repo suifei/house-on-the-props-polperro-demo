@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>House on the Props · Polperro</title>
+  <meta name="description" content="Historic bed and breakfast and restaurant on stilts beside Polperro harbour. Three rooms with harbour views. Breakfast and lunch daily. Call 01503 272310 or email houseontheprops@yahoo.com.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&amp;family=Sora:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --piling: #1f1814;
+      --harbour: #2a3d4f;
+      --harbour-mid: #354a5e;
+      --harbour-deep: #16232f;
+      --salt: #f5f0e6;
+      --salt-deep: #e6dccb;
+      --rope: #c9a36a;
+      --rope-soft: #ddc08a;
+      --lichen: #6a7a5e;
+      --ink: #1c1814;
+      --muted: #5a5248;
+      --foam: #efe8d8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    body {
+      font-family: Sora, "Segoe UI", sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.55;
+      color: var(--ink);
+      background: var(--salt);
+      padding-bottom: 4.6rem;
+    }
+    a { color: var(--harbour); text-underline-offset: 0.16em; }
+    a:hover { color: var(--piling); }
+    :focus-visible { outline: 2px solid var(--rope); outline-offset: 3px; }
+    .wrap { width: min(40rem, calc(100% - 1.5rem)); margin-inline: auto; }
+    .eyebrow {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--lichen);
+    }
+    .skip {
+      position: absolute; left: 0.75rem; top: -3.2rem;
+      background: var(--rope); color: var(--piling);
+      padding: 0.45rem 0.75rem; font-weight: 700; z-index: 30; text-decoration: none;
+    }
+    .skip:focus { top: 0.75rem; }
+    header.site {
+      position: sticky; top: 0; z-index: 10; color: var(--foam);
+      background: var(--piling);
+      border-bottom: 3px solid var(--rope);
+    }
+    .nav {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+      gap: 0.45rem 0.9rem; min-height: 3.2rem;
+      width: min(54rem, calc(100% - 1.5rem)); margin-inline: auto; padding: 0.4rem 0;
+    }
+    .nav-mark {
+      font-family: Newsreader, Georgia, serif; font-size: 1.18rem; font-weight: 600;
+      color: var(--foam); text-decoration: none; line-height: 1.15;
+    }
+    .nav-mark span {
+      display: block; font-family: Sora, sans-serif; font-size: 0.66rem;
+      font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--rope-soft);
+    }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 0.15rem; list-style: none; }
+    .nav-links a {
+      color: var(--foam); text-decoration: none; font-size: 0.92rem;
+      min-height: 2.5rem; display: inline-flex; align-items: center; padding: 0.25rem 0.55rem;
+    }
+    .nav-links a:hover { color: var(--rope-soft); }
+    .nav-links a.call {
+      background: var(--rope); color: var(--piling); font-weight: 700;
+      padding: 0.35rem 0.8rem; margin-left: 0.25rem;
+    }
+    .hero {
+      color: var(--foam);
+      background:
+        repeating-linear-gradient(90deg, transparent 0 22px, rgba(31,24,20,0.28) 22px 28px),
+        radial-gradient(ellipse at 18% 0%, rgba(201,163,106,0.22), transparent 42%),
+        linear-gradient(175deg, var(--harbour-mid) 0%, var(--harbour) 48%, var(--harbour-deep) 100%);
+      padding: 2.4rem 0 0;
+    }
+    .hero h1 {
+      font-family: Newsreader, Georgia, serif;
+      font-weight: 600; font-size: clamp(2.35rem, 10.5vw, 3.9rem);
+      line-height: 0.98; margin-top: 0.4rem; letter-spacing: -0.02em;
+    }
+    .hero h1 em {
+      display: block; font-style: italic; font-weight: 400;
+      font-size: 0.58em; color: var(--rope-soft); margin-top: 0.2rem;
+    }
+    .hero .where {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--rope-soft);
+    }
+    .hero .line { margin-top: 1.05rem; max-width: 30rem; color: var(--foam); }
+    .hero address { margin-top: 0.85rem; font-style: normal; font-size: 0.95rem; color: #c9d4dc; }
+    .actions { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-top: 1.35rem; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 2.85rem; padding: 0.55rem 1.15rem; text-decoration: none; font-weight: 700;
+    }
+    .btn-solid { background: var(--rope); color: var(--piling); }
+    .btn-solid:hover { background: var(--rope-soft); color: var(--piling); }
+    .btn-ghost { background: transparent; color: var(--foam); box-shadow: inset 0 0 0 2px rgba(239,232,216,0.5); }
+    .btn-ghost:hover { color: var(--rope-soft); }
+    .deck { height: 3.4rem; margin-top: 1.1rem; color: var(--salt); }
+    .deck svg { width: 100%; height: 100%; display: block; }
+    section { padding: 2.55rem 0; }
+    section h2 {
+      font-family: Newsreader, Georgia, serif;
+      font-weight: 600; font-size: clamp(1.6rem, 5.6vw, 2.3rem);
+      line-height: 1.12; color: var(--harbour-deep); margin: 0.35rem 0 0.95rem;
+    }
+    .house p { margin-bottom: 0.9rem; }
+    .posts {
+      display: grid; gap: 0.7rem; margin-top: 1.3rem;
+    }
+    @media (min-width: 560px) { .posts { grid-template-columns: 1fr 1fr 1fr; } }
+    .post {
+      background: var(--salt-deep); padding: 0.95rem 1rem 1.05rem;
+      border-top: 4px solid var(--piling);
+    }
+    .post strong {
+      display: block; font-family: Newsreader, Georgia, serif;
+      font-size: 1.15rem; color: var(--harbour-deep); margin-bottom: 0.25rem;
+    }
+    .post p { color: var(--muted); margin: 0; }
+    .eat { background: var(--salt-deep); }
+    .hours { background: var(--harbour-deep); color: var(--foam); }
+    .hours h2 { color: var(--foam); }
+    .hours .eyebrow { color: var(--rope-soft); }
+    .hours .lede { color: #c5d0d8; margin-bottom: 1.15rem; }
+    .tide-table { width: 100%; border-collapse: collapse; }
+    .tide-table th, .tide-table td {
+      text-align: left; padding: 0.7rem 0.55rem;
+      border-bottom: 1px solid rgba(239,232,216,0.14); vertical-align: top;
+    }
+    .tide-table thead th {
+      font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--rope-soft); font-weight: 700; border-bottom: 2px solid var(--rope);
+    }
+    .tide-table th:first-child, .tide-table td:first-child {
+      padding-left: 0; font-family: Newsreader, Georgia, serif;
+    }
+    .tide-table .blank { color: #8a97a3; }
+    .stay { background: var(--salt); }
+    .rules { display: grid; gap: 0.7rem; }
+    @media (min-width: 560px) { .rules { grid-template-columns: 1fr 1fr; } }
+    .rule { background: var(--salt-deep); padding: 0.95rem 1rem 1.05rem; border-top: 3px solid var(--lichen); }
+    .rule strong {
+      display: block; font-family: Newsreader, Georgia, serif;
+      font-size: 1.12rem; color: var(--harbour-deep); margin-bottom: 0.25rem;
+    }
+    .rule p { color: var(--muted); }
+    .visit {
+      background: linear-gradient(180deg, var(--harbour) 0%, var(--harbour-deep) 100%);
+      color: var(--foam);
+    }
+    .visit h2 { color: var(--foam); }
+    .visit .eyebrow { color: var(--rope-soft); }
+    .visit a { color: var(--rope-soft); }
+    .visit address {
+      font-family: Newsreader, Georgia, serif; font-style: normal;
+      font-size: 1.25rem; line-height: 1.4; margin: 0.15rem 0 1.15rem;
+    }
+    .visit dl { display: grid; gap: 0.85rem; }
+    .visit dt {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--rope-soft);
+    }
+    footer.site { background: var(--piling); color: var(--foam); padding: 1.6rem 0 1.8rem; }
+    footer .shop { font-family: Newsreader, Georgia, serif; font-size: 1.15rem; }
+    footer .around { margin-top: 0.95rem; }
+    footer .around p {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--rope-soft); margin-bottom: 0.4rem;
+    }
+    footer .around ul { list-style: none; display: flex; flex-wrap: wrap; gap: 0.35rem 0.85rem; }
+    footer .around a { color: var(--foam); font-size: 0.92rem; }
+    footer .around a:hover { color: var(--rope-soft); }
+    .dock {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 15;
+      display: grid; grid-template-columns: 1fr 1fr;
+      background: var(--piling); border-top: 2px solid var(--rope);
+    }
+    .dock a {
+      display: flex; align-items: center; justify-content: center;
+      min-height: 3.1rem; text-decoration: none; font-weight: 700;
+    }
+    .dock .call { background: var(--rope); color: var(--piling); }
+    .dock .mail { color: var(--foam); }
+    @media (min-width: 720px) { body { padding-bottom: 0; } .dock { display: none; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site">
+    <nav class="nav" aria-label="Page">
+      <a class="nav-mark" href="#main">House on the Props<span>Polperro harbour</span></a>
+      <ul class="nav-links">
+        <li><a href="#house">House</a></li>
+        <li><a href="#eat">Eat</a></li>
+        <li><a href="#stay">Stay</a></li>
+        <li><a href="#hours">Hours</a></li>
+        <li><a href="#visit">Visit</a></li>
+        <li><a class="call" href="tel:+441503272310">Call</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap">
+        <p class="where">Talland Street · Polperro</p>
+        <h1 id="hero-title">House on the Props <em>the house on stilts</em></h1>
+        <p class="line">A historic bed and breakfast and restaurant, stood on timber props next to the harbour among the fishermen’s cottages.</p>
+        <address>Talland Street, Polperro, Cornwall PL13 2RE</address>
+        <div class="actions">
+          <a class="btn btn-solid" href="tel:+441503272310">Call 01503 272310</a>
+          <a class="btn btn-ghost" href="mailto:houseontheprops@yahoo.com">Email us</a>
+        </div>
+      </div>
+      <div class="deck" aria-hidden="true">
+        <svg viewBox="0 0 1440 88" preserveAspectRatio="none" focusable="false">
+          <rect x="0" y="52" width="1440" height="36" fill="#f5f0e6"/>
+          <path fill="#e6dccb" d="M0 52h1440v8H0z"/>
+          <g fill="#1f1814">
+            <rect x="70" y="0" width="14" height="60"/>
+            <rect x="250" y="8" width="12" height="52"/>
+            <rect x="430" y="0" width="16" height="60"/>
+            <rect x="620" y="10" width="12" height="50"/>
+            <rect x="810" y="2" width="15" height="58"/>
+            <rect x="1000" y="8" width="12" height="52"/>
+            <rect x="1190" y="0" width="16" height="60"/>
+            <rect x="1360" y="10" width="12" height="50"/>
+          </g>
+        </svg>
+      </div>
+    </section>
+    <section class="house" id="house">
+      <div class="wrap">
+        <p class="eyebrow">The Props</p>
+        <h2>On stilts beside the harbour</h2>
+        <p>Known locally as the Props — the house on stilts. A historic bed and breakfast and restaurant next to Polperro harbour, among the fishermen’s cottages.</p>
+        <p>Beams and masts from the Maverine, which foundered around 1700, sit in the building, with nautical and smuggling artefacts throughout.</p>
+        <div class="posts">
+          <article class="post"><strong>Three rooms</strong><p>Harbour views from the house.</p></article>
+          <article class="post"><strong>On the path</strong><p>The South West Coastal Path runs through the village.</p></article>
+          <article class="post"><strong>The harbour</strong><p>Stood on timber props among the cottages.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="eat" id="eat">
+      <div class="wrap">
+        <p class="eyebrow">Kitchen</p>
+        <h2>Breakfast, lunch, and homemade</h2>
+        <p>Breakfast and lunch daily, all year. Homemade meals and lighter options, seasonal and locally sourced. Cakes and Cornish scones made fresh each day.</p>
+        <p>Evening meals in high season — please call to check. This page does not list a menu.</p>
+      </div>
+    </section>
+    <section class="stay" id="stay">
+      <div class="wrap">
+        <p class="eyebrow">A room</p>
+        <h2>Call or email — no form on this page</h2>
+        <div class="rules">
+          <article class="rule"><strong>Three rooms</strong><p>Harbour views. Telephone or email is enough — there is no booking form here.</p></article>
+          <article class="rule"><strong>Coast path</strong><p>The South West Coastal Path comes through the village. Walk in from the harbour or the path.</p></article>
+          <article class="rule"><strong>No traffic in the village</strong><p>Polperro has no traffic access. There is a large car park just outside the village.</p></article>
+          <article class="rule"><strong>Luggage taxi</strong><p>A luggage taxi and quad bike trailer can bring bags in. Call 07896 536317 for availability and prices.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="hours" id="hours" aria-labelledby="hours-title">
+      <div class="wrap">
+        <p class="eyebrow">Open</p>
+        <h2 id="hours-title">When the kitchen is open</h2>
+        <p class="lede">Breakfast and lunch every day. Evening meals in high season — please call to check; evening hours are not listed here.</p>
+        <table class="tide-table">
+          <thead><tr><th scope="col">Day</th><th scope="col">Breakfast &amp; lunch</th><th scope="col">Evening</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Monday</th><td>9:30am – 3.30pm</td><td class="blank"></td></tr>
+            <tr><th scope="row">Tuesday</th><td>9:30am – 3.30pm</td><td class="blank"></td></tr>
+            <tr><th scope="row">Wednesday</th><td>9:30am – 3.30pm</td><td class="blank"></td></tr>
+            <tr><th scope="row">Thursday</th><td>9:30am – 3.30pm</td><td class="blank"></td></tr>
+            <tr><th scope="row">Friday</th><td>9:30am – 3.30pm</td><td class="blank"></td></tr>
+            <tr><th scope="row">Saturday</th><td>9:30am – 3.30pm</td><td class="blank"></td></tr>
+            <tr><th scope="row">Sunday</th><td>9:30am – 3.30pm</td><td class="blank"></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section class="visit" id="visit">
+      <div class="wrap">
+        <p class="eyebrow">Visit</p>
+        <h2>Talland Street</h2>
+        <address>House on the Props<br>Talland Street<br>Polperro, Cornwall PL13 2RE</address>
+        <dl>
+          <div><dt>Telephone</dt><dd><a href="tel:+441503272310">01503 272310</a></dd></div>
+          <div><dt>Email</dt><dd><a href="mailto:houseontheprops@yahoo.com">houseontheprops@yahoo.com</a></dd></div>
+          <div><dt>Hours</dt><dd>Monday to Sunday 9:30am–3.30pm for breakfast and lunch. Evening meals in high season — please call to check.</dd></div>
+          <div><dt>Getting here</dt><dd>The village has no traffic access. Large car park just outside the village. Luggage taxi / quad bike trailer: <a href="tel:+447896536317">07896 536317</a> — please call for availability and prices.</dd></div>
+          <div><dt>Map</dt><dd><a href="https://www.openstreetmap.org/search?query=Talland%20Street%20Polperro%20PL13%202RE">Open in OpenStreetMap</a></dd></div>
+        </dl>
+        <div class="actions">
+          <a class="btn btn-solid" href="tel:+441503272310">Call 01503 272310</a>
+          <a class="btn btn-ghost" href="mailto:houseontheprops@yahoo.com">Email us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site">
+    <div class="wrap">
+      <p class="shop">House on the Props · Polperro</p>
+      <nav class="around" aria-label="Other shops">
+        <p>Also around</p>
+        <ul>
+          <li><a href="https://suifei.github.io/lezzet-scarborough-demo/">Lezzet, Scarborough</a></li>
+          <li><a href="https://suifei.github.io/salcombe-deli-demo/">The Salcombe Delicatessen</a></li>
+          <li><a href="https://suifei.github.io/wardroom-salcombe-demo/">The Wardroom, Salcombe</a></li>
+          <li><a href="https://suifei.github.io/harbour-inn-padstow-demo/">The Harbour Inn, Padstow</a></li>
+          <li><a href="https://suifei.github.io/london-inn-padstow-demo/">The London Inn, Padstow</a></li>
+          <li><a href="https://suifei.github.io/king-of-prussia-fowey-demo/">The King of Prussia, Fowey</a></li>
+          <li><a href="https://suifei.github.io/fish-market-looe-demo/">The Fish Market, Looe</a></li>
+          <li><a href="https://suifei.github.io/fifty-looe-demo/">Fifty Looe</a></li>
+          <li><a href="https://suifei.github.io/pepes-texmex-looe-demo/">Pepe's Tex-Mex, Looe</a></li>
+          <li><a href="https://suifei.github.io/jolly-sailor-looe-demo/">The Jolly Sailor, Looe</a></li>
+          <li><a href="https://suifei.github.io/three-pilchards-polperro-demo/">The Three Pilchards, Polperro</a></li>
+          <li><a href="https://suifei.github.io/ship-inn-polperro-demo/">The Ship Inn, Polperro</a></li>
+          <li><a href="https://suifei.github.io/oxox-polperro-demo/">O X O X, Polperro</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+  <nav class="dock" aria-label="Call or email">
+    <a class="call" href="tel:+441503272310">Call</a>
+    <a class="mail" href="mailto:houseontheprops@yahoo.com">Email</a>
+  </nav>
+</body>
+</html>
